@@ -42,20 +42,35 @@ async function getData(id_pelanggan) {
 
 async function saveData() {
     let data = []
-    for (let i = 202000; i < 202999; i++) {
-       console.log(`0${i}`)
+    for (let i = 401000; i < 401999; i++) {
+    //    console.log(`0${i}`)
         let pelanggan = await getData(`0${i}`)
         if (pelanggan != null) {
-
-            // fs.writeFileSync('data.json', JSON.stringify(data));
             console.log(pelanggan)
             data.push(pelanggan)
         }
-    
+
     }
+
+    fs.writeFileSync('./data/pdam-0401000.json', JSON.stringify(data, null, 4));
+    console.log(data.length)
+    console.log("selesai")
+    let data2 = []
+    for (let i = 301000; i < 301999; i++) {
+        //    console.log(`0${i}`)
+        let pelanggan = await getData(`0${i}`)
+        if (pelanggan != null) {
+            console.log(pelanggan)
+            data2.push(pelanggan)
+        }
+
+    }
+    fs.writeFileSync('./data/pdam-0301000.json', JSON.stringify(data, null, 4));
+    console.log(data.length)
+    console.log("selesai")
     // let pelanggan = await getData('0201275')
-  
-    fs.writeFileSync('pdam-0202999.json', JSON.stringify(data, null, 4));
+
+    return
 
     // fs.writeFileSync('data.json', JSON.stringify(data));
     
