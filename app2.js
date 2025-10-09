@@ -23,7 +23,7 @@ async function getData(id_pelanggan) {
 
 async function saveData() {
     let data = []
-    for (let i = 402000; i < 402999; i++) {
+    for (let i = 101000; i < 101999; i++) {
         console.log(`0${i}`)
         let pelanggan = await getData(`0${i}`)
         if (pelanggan != null) {
@@ -33,15 +33,10 @@ async function saveData() {
 
     }
 
-    fs.writeFileSync('./data/pdam-402000.json', JSON.stringify(data, null, 4));
+    fs.writeFileSync('./data/pdam-0101000.json', JSON.stringify(data, null, 4));
     console.log(data.length)
     console.log("selesai")
-    
-    // let pelanggan = await getData('0201275')
-
     return
-
-    // fs.writeFileSync('data.json', JSON.stringify(data));
     
 }
 saveData()
