@@ -33,14 +33,7 @@ async function getData(id_pelanggan) {
         data: data
     };
 
-   let response = await axios.request(config)
-        // .then((response) => {
-        //     console.log(JSON.stringify(response.data));
-        // })
-        // .catch((error) => {
-        //     console.log(error);
-        // });
-    console.log(response.data)
+    let response = await axios.request(config)
     return response.data
 
 }
@@ -49,19 +42,20 @@ async function getData(id_pelanggan) {
 
 async function saveData() {
     let data = []
-    for (let i = 101000; i < 101999; i++) {
+    for (let i = 202000; i < 202999; i++) {
        console.log(`0${i}`)
         let pelanggan = await getData(`0${i}`)
         if (pelanggan != null) {
 
             // fs.writeFileSync('data.json', JSON.stringify(data));
+            console.log(pelanggan)
             data.push(pelanggan)
         }
     
     }
     // let pelanggan = await getData('0201275')
   
-    fs.writeFileSync('0101000-010108.json', JSON.stringify(data, null, 4));
+    fs.writeFileSync('pdam-0202999.json', JSON.stringify(data, null, 4));
 
     // fs.writeFileSync('data.json', JSON.stringify(data));
     
