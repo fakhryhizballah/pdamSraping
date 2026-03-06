@@ -1,7 +1,7 @@
 const axios = require('axios');
 const qs = require('qs');
 const fs = require('fs');
-
+// http://sandbox.indo-sakti.co.id:3180/info-skw/
 async function getData(id_pelanggan) {
     let data = qs.stringify({
         'id_pelanggan': id_pelanggan
